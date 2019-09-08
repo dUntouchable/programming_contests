@@ -77,3 +77,13 @@ def main():
         print(count+1)
 
 main()
+
+
+# 2nd Solution by recurssion, only few lines of codes
+
+def recur(arr, R, S, count_a, count_b):
+    if count_a < S * count_b:
+        return 0
+    if len(arr) == R:
+        return 1
+    return recur(arr + ['A'], R, S, count_a + 1, count_b) + recur(arr + ['S'], R, S, count_a, count_b + 1)
